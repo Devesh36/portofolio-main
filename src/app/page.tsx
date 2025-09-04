@@ -56,8 +56,11 @@ export default function Page() {
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+              <BlurFade
+                key={`${skill}-${id}`}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <Badge>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
@@ -85,12 +88,11 @@ export default function Page() {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
-                key={project.title}
+                key={`${project.title}-${id}`}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
               >
                 <ProjectCard
                   href={project.href}
-                  key={project.title}
                   title={project.title}
                   description={project.description}
                   dates={project.dates}
@@ -111,17 +113,16 @@ export default function Page() {
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
-              key={work.company}
+              key={`${work.company}-${id}`}
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
+                logoUrl={(work as any).logoUrl ?? ""}
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
+                href={(work as any).href ?? ""}
+                badges={(work as any).badges ?? []}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
@@ -155,7 +156,7 @@ export default function Page() {
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
               {DATA.hackathons.map((project, id) => (
                 <BlurFade
-                  key={project.title + project.dates}
+                  key={`${project.title}-${project.dates}-${id}`}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
                 >
                   <HackathonCard
@@ -179,13 +180,12 @@ export default function Page() {
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
-              key={education.school}
+              key={`${education.school}-${id}`}
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
-                key={education.school}
-                href={education.href}
-                logoUrl={education.logoUrl}
+                href={(education as any).href ?? ""}
+                logoUrl={(education as any).logoUrl ?? ""}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
