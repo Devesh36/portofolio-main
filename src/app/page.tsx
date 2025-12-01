@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -23,6 +24,7 @@ export default function Page() {
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                animateByCharacter={true}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -40,9 +42,18 @@ export default function Page() {
         </div>
       </section>
       <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
+        <div className="flex justify-between items-center">
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <h2 className="text-xl font-bold">About</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <Link href="/resume.pdf" download target="_blank">
+              <Button variant="outline" size="sm">
+                Download Resume
+              </Button>
+            </Link>
+          </BlurFade>
+        </div>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
@@ -213,8 +224,7 @@ export default function Page() {
                 >
                   with a direct question on twitter
                 </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                and I&apos;ll respond whenever I can.
               </p>
             </div>
           </BlurFade>

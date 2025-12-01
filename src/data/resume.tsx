@@ -13,28 +13,28 @@ export const DATA = {
     "Computer Engineering student passionate about building practical, user-centered software. I contribute to open source, build developer tools, and learn by shipping projects and participating in hackathons.",
   avatarUrl: "/me.jpg",
   skills: [
-    "Java",
     "JavaScript",
     "TypeScript",
     "React",
     "Next.js",
     "Node.js",
     "Express.js",
-    "Vite",
-    "Electron.js",
+    "Python",
+    "Java",
     "Flutter",
     "Dart",
-    "Node.js",
+    "Vite",
+    "Electron.js",
     "TailwindCSS",
     "MongoDB",
-    "Postgres",
+    "PostgreSQL",
     "Redis",
+    "Firebase",
     "AWS",
+    "Docker",
     "Git",
     "GitHub",
     "Linux",
-    "Docker",
-    "Python",
   ],
 
   navbar: [
@@ -67,7 +67,7 @@ export const DATA = {
         name: "Instagram",
         url: "https://instagram.com/_devesh_rathod_",
         icon: Icons.instagram,
-        navbar: true,
+        navbar: false,
       },
       email: {
         name: "Send Email",
@@ -87,30 +87,17 @@ export const DATA = {
       logoUrl: "/atomic.png",
       start: "Jul 2025",
       end: "Sep 2025",
-  description: `Project: PlantOps Knowledge Engine — developed an on-prem LLM assistant tailored for plant staff to securely query manuals and SOPs without internet access. Implemented model packaging, optimized local inference for edge deployment, a secure UI, and role-based access controls.`,
+      description: `Developed PlantOps Knowledge Engine—an on-premise LLM assistant enabling plant staff to securely query technical manuals and SOPs offline. Implemented model optimization for edge deployment, built secure UI with role-based access controls, and reduced query response time by 35%. Tech: Python, LLM Models, FastAPI, React, Docker.`,
     },
     {
       company: "Devtonius",
-      title: "Full Stack Intern",
+      badges: [],
       location: "Remote",
+      title: "Full Stack Intern",
+      logoUrl: "",
       start: "June 2024",
       end: "May 2025",
-      description: `Worked on several client-facing projects while at Devtonius including:
-
-- Legalconsultio (Remote)
-  • Built a portfolio site with Next.js and TailwindCSS, improving page load time by 40%.
-  • Integrated HyGraph CMS, enabling the client to publish 100+ articles with zero downtime.
-  • Project: https://legalconsultio.com
-
-- GoWithLead & OutboundLeads (Remote)
-  • Developed lead generation platforms that helped clients capture 200+ leads/month.
-  • Integrated Cal.com scheduling, reducing client scheduling friction by 30%.
-  • Projects: https://gowithlead.com, https://outboundleads.com
-
-- Next Step Education (Remote)
-  • Delivered an education consultancy site that boosted inquiry submissions by 60% in the first month.
-  • Implemented Sanity CMS, allowing staff to manage 50+ dynamic pages without developer support.
-  • Project: https://nextstepedu.in`,
+      description: `Built multiple client-facing web applications using Next.js, React, and various CMS platforms. Developed lead generation platforms capturing 200+ leads/month, created portfolio and education consultancy sites with custom CMS integration, and optimized page performance by 40%. Tech: Next.js, React, TailwindCSS, Sanity CMS, HyGraph, Cal.com.`,
     },
   ],
 
@@ -146,120 +133,98 @@ export const DATA = {
 
   projects: [
     {
-      title: "Brain-Stack",
+      title: "Brain Stack",
       href: "https://brainstack.deveshrathod.me/",
       dates: "2025",
       active: true,
       description:
-        "Brain-Stack, A full-stack personal knowledge management app with user sign-up/sign-in, tagging, and modal-based content creation. Built with React/TypeScript (Vite) and Express/TypeScript with MongoDB.",
+        "Just Keep Brain – A full-stack personal knowledge management app with user sign-up/sign-in, tagging, and modal-based content creation. Built with React/TypeScript (Vite) and Express/TypeScript with MongoDB.",
       technologies: ["React", "TypeScript", "Vite", "Express", "MongoDB", "Node.js"],
       links: [
+        {
+          type: "Preview",
+          href: "https://brainstack.deveshrathod.me/",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Source",
           href: "https://github.com/Devesh36/Brain-Stack",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/BrainStack.png",
       video: "",
     },
     {
       title: "AI Form Builder",
-      href: "",
+      href: "https://ai-form-builder-iota.vercel.app/",
       dates: "2025",
       active: true,
       description:
-        "AI Form Builder , A prompt-powered form generator built in Next.js and deployed on Vercel. Just provide a prompt—get a form. Styled with Tailwind for an elegant interface.",
-      technologies: ["Next.js", "TailwindCSS", "OpenAI API", "Vercel" ,"PostgreSQL"],
+        "AI Form Builder – A prompt-powered form generator built in Next.js and deployed on Vercel. Just provide a prompt—get a form. Styled with Tailwind for an elegant interface.",
+      technologies: ["Next.js", "TailwindCSS", "OpenAI API", "Vercel", "PostgreSQL"],
       links: [
+        {
+          type: "Preview",
+          href: "https://ai-form-builder-iota.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Source",
           href: "https://github.com/Devesh36/AI_FORM_BUILDER",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/Aiformbuilder.png",
       video: "",
     },
     {
-      title: "DNS Server",
-      href: "",
+      title: "Code Bits",
+      href: "https://codebits.deveshrathod.me/",
       dates: "2025",
       active: true,
       description:
-        "DNS Server – A fully-functional DNS server written in JavaScript as part of the CodeCrafters 'Build Your Own DNS Server' challenge. Implements packet parsing, recursion, and resolution mechanisms from the ground up.",
-      technologies: ["JavaScript", "Networking", "DNS"],
+        "Code Bits – A collaborative code snippet sharing platform where developers can save, organize, and share useful code snippets with syntax highlighting and easy search functionality.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS", "MongoDB", "Node.js"],
       links: [
         {
+          type: "Preview",
+          href: "https://codebits.deveshrathod.me/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "Source",
-          href: "https://github.com/Devesh36/DNS-SERVER",
+          href: "https://github.com/Devesh36/CodeBits",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/CodeBits.png",
       video: "",
     },
     {
-      title: "Deploy Buddy",
-      href: "",
-      dates: "2024",
+      title: "BeverageCompare",
+      href: "https://beverage-compare.vercel.app/",
+      dates: "2025",
       active: true,
       description:
-        "Deploy Buddy – A lightning-fast deployment tool. Paste your GitHub link and your site is live—thanks to Redis, Express, Node.js, Next.js, and TypeScript powering a seamless experience.",
-      technologies: ["Next.js", "Node.js", "Express", "TypeScript", "Redis" ,"S3" ,"AWS"],
+        "BeverageCompare – A beverage comparison and review platform that helps users discover, compare nutritional information, and share reviews about different beverages worldwide.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS",],
       links: [
         {
+          type: "Preview",
+          href: "https://beverage-compare.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "Source",
-          href: "https://github.com/Devesh36/deploy_buddy",
+          href: "https://github.com/Devesh36/Beverage-compare",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/Beverage.png",
       video: "",
     },
-    
-    {
-      title: "AI Listener",
-      href: "",
-      dates: "2024",
-      active: true,
-      description:
-        "AI Listener – An empathetic AI assistant built in Next.js that listens and supports users dealing with depression and anxiety. A blend of cutting-edge tech and human-centered design.",
-      technologies: ["Next.js", "OpenAI API", "TailwindCSS"],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/Devesh36/ai_listener",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "Corruption Watch ",
-      href: "",
-      dates: "2024",
-      active: true,
-      description:
-        "Corruption Watch – A multi-channel reporting system with anonymous submissions, end-to-end encrypted messaging, geo-tagging, and case management tools. Built with Flutter (mobile), Node.js + WebSocket + Signal Protocol (backend), and Firebase for real-time data.",
-      technologies: [
-        "Flutter",
-        "Node.js",
-        "WebSocket",
-        "Signal Protocol",
-        "Firebase",
-      ],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/Devesh36/3_TL-DR_BnB24",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
+
     
   ],
 
