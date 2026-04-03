@@ -132,7 +132,7 @@ export const DATA = {
     {
       title: "CodeLens AI",
       href: "https://codelens.devesh.cv/",
-      dates: "2025",
+      dates: "2026",
       active: true,
       description:
         "CodeLens AI – AI-powered SaaS for code understanding with line-by-line explanations, summaries, and complexity analysis. Built with LLaMA 3.1 via Groq and a Monaco editor for real-time AI interaction.",
@@ -162,7 +162,7 @@ export const DATA = {
     {
       title: "InternTrack",
       href: "https://interntrack.devesh.cv/",
-      dates: "2025",
+      dates: "2026",
       active: true,
       description:
         "InternTrack – Internship tracking and verification platform with role-based access for students, teachers, and HR. Includes token-based HR attendance verification, audit logs, dashboards, and automation via cron jobs.",
