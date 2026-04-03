@@ -237,6 +237,20 @@ export const DATA = {
     },
   ],
 
+  extensions: [
+    {
+      title: "Infinity Castle",
+      description:
+        "A cozy dark VS Code theme inspired by fantasy and castle aesthetics, crafted for an immersive and comfortable coding experience.",
+      type: "Extension",
+      downloads: "400+ Downloads",
+      highlight: "Real Product",
+      platform: "Open VSX",
+      href: "https://open-vsx.org/extension/Infinity/infinity-castle",
+      image: "/extension/infinityimage.png",
+    },
+  ],
+
   openSource: [
     {
       title: "LiveKit Agents JS (Voice AI Framework)",

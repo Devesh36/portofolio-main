@@ -1,5 +1,6 @@
+import { ExtensionCard } from "@/components/extension-card";
 import { HackathonCard } from "@/components/hackathon-card";
-import {BlurFade} from "@/components/magicui/blur-fade";
+import { BlurFade } from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
@@ -60,21 +61,55 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
-      <section id="skills">
+      <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+          <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade
-                key={`${skill}-${id}`}
-                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
-              >
-                <Badge>{skill}</Badge>
-              </BlurFade>
-            ))}
-          </div>
+          {DATA.work.map((work, id) => (
+            <BlurFade
+              key={`${work.company}-${id}`}
+              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+            >
+              <ResumeCard
+                logoUrl={(work as any).logoUrl ?? ""}
+                altText={work.company}
+                title={work.company}
+                subtitle={work.title}
+                href={(work as any).href ?? ""}
+                badges={(work as any).badges ?? []}
+                period={`${work.start} - ${work.end ?? "Present"}`}
+                description={work.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="open-source">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <h2 className="text-xl font-bold">Open Source Contributions</h2>
+          </BlurFade>
+          {DATA.openSource.map((item, id) => (
+            <BlurFade
+              key={`${item.title}-${id}`}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+            >
+              <ResumeCard
+                logoUrl=""
+                altText={item.title}
+                title={item.title}
+                subtitle="Open Source Contribution"
+                badges={item.tech}
+                period=""
+                description={`${item.description}${
+                  item.repos.length > 0
+                    ? ` Repos: ${item.repos.join(", ")}.`
+                    : ""
+                }`}
+              />
+            </BlurFade>
+          ))}
         </div>
       </section>
       <section id="projects">
@@ -117,57 +152,61 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="open-source">
-        <div className="flex min-h-0 flex-col gap-y-3">
+      <section id="extensions">
+        <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 12}>
-            <h2 className="text-xl font-bold">Open Source Contributions</h2>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Extensions
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Published developer tools
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Real-world extensions with active users and real adoption.
+                </p>
+              </div>
+            </div>
           </BlurFade>
-          {DATA.openSource.map((item, id) => (
-            <BlurFade
-              key={`${item.title}-${id}`}
-              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-            >
-              <ResumeCard
-                logoUrl=""
-                altText={item.title}
-                title={item.title}
-                subtitle="Open Source Contribution"
-                badges={item.tech}
-                period=""
-                description={`${item.description}${
-                  item.repos.length > 0
-                    ? ` Repos: ${item.repos.join(", ")}.`
-                    : ""
-                }`}
-              />
-            </BlurFade>
-          ))}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {DATA.extensions.map((extension, id) => (
+              <BlurFade
+                key={`${extension.title}-${id}`}
+                delay={BLUR_FADE_DELAY * 13 + id * 0.05}
+              >
+                <ExtensionCard
+                  title={extension.title}
+                  description={extension.description}
+                  type={extension.type}
+                  downloads={extension.downloads}
+                  highlight={extension.highlight}
+                  platform={extension.platform}
+                  href={extension.href}
+                  image={extension.image}
+                />
+              </BlurFade>
+            ))}
+          </div>
         </div>
       </section>
-      <section id="work">
+      <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={`${work.company}-${id}`}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
-              <ResumeCard
-                logoUrl={(work as any).logoUrl ?? ""}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={(work as any).href ?? ""}
-                badges={(work as any).badges ?? []}
-                period={`${work.start} - ${work.end ?? "Present"}`}
-                description={work.description}
-              />
-            </BlurFade>
-          ))}
+          <div className="flex flex-wrap gap-1">
+            {DATA.skills.map((skill, id) => (
+              <BlurFade
+                key={`${skill}-${id}`}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <Badge>{skill}</Badge>
+              </BlurFade>
+            ))}
+          </div>
         </div>
-      </section>   
+      </section>
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
