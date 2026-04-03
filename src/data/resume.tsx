@@ -4,14 +4,14 @@ import { HomeIcon } from "lucide-react";
 export const DATA = {
   name: "Devesh Rathod",
   initials: "DR",
-  url: "https://deveshrathod.me",
+  url: "https://devesh.cv",
   location: "Mumbai, India",
   locationLink: "https://www.google.com/maps/place/Mumbai",
   description:
     "Full‑stack engineer building user-focused web and mobile apps. I focus on shipping reliable, maintainable products that solve real problems and support developer communities.",
   summary:
     "Computer Engineering student passionate about building practical, user-centered software. I contribute to open source, build developer tools, and learn by shipping projects and participating in hackathons.",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/me2.jpeg",
   skills: [
     "JavaScript",
     "TypeScript",
