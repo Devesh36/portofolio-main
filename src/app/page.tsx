@@ -117,6 +117,33 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="open-source">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <h2 className="text-xl font-bold">Open Source Contributions</h2>
+          </BlurFade>
+          {DATA.openSource.map((item, id) => (
+            <BlurFade
+              key={`${item.title}-${id}`}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+            >
+              <ResumeCard
+                logoUrl=""
+                altText={item.title}
+                title={item.title}
+                subtitle="Open Source Contribution"
+                badges={item.tech}
+                period=""
+                description={`${item.description}${
+                  item.repos.length > 0
+                    ? ` Repos: ${item.repos.join(", ")}.`
+                    : ""
+                }`}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>

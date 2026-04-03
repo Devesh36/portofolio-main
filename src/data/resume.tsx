@@ -21,9 +21,6 @@ export const DATA = {
     "Express.js",
     "Python",
     "Java",
-    "Flutter",
-    "Dart",
-    "Vite",
     "Electron.js",
     "TailwindCSS",
     "MongoDB",
@@ -108,8 +105,8 @@ export const DATA = {
       degree: "Computer Engineering ( B.E. )",
       logoUrl:
         "https://images.shiksha.com/mediadata/images/1663656852phpDeGhCE.jpeg",
-      start: "2023",
-      end: "Present",
+      start: "2022",
+      end: "2026",
     },
     {
       school: "P. G. Jr. College, Bordi ( Gokhale Education Society )",
@@ -133,8 +130,68 @@ export const DATA = {
 
   projects: [
     {
+      title: "CodeLens AI",
+      href: "https://codelens.devesh.cv/",
+      dates: "2025",
+      active: true,
+      description:
+        "CodeLens AI – AI-powered SaaS for code understanding with line-by-line explanations, summaries, and complexity analysis. Built with LLaMA 3.1 via Groq and a Monaco editor for real-time AI interaction.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Groq SDK",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          type: "Preview",
+          href: "https://codelens.devesh.cv/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Devesh36/CodeLens",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/Codelens.png",
+      video: "",
+    },
+    {
+      title: "InternTrack",
+      href: "https://interntrack.devesh.cv/",
+      dates: "2025",
+      active: true,
+      description:
+        "InternTrack – Internship tracking and verification platform with role-based access for students, teachers, and HR. Includes token-based HR attendance verification, audit logs, dashboards, and automation via cron jobs.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "JWT",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          type: "Preview",
+          href: "https://interntrack.devesh.cv/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Devesh36/Interntrack",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/Interntrack.png",
+      video: "",
+    },
+    {
       title: "Brain Stack",
-      href: "https://brainstack.deveshrathod.me/",
+      href: "https://brainstack.devesh.cv/",
       dates: "2025",
       active: true,
       description:
@@ -143,7 +200,7 @@ export const DATA = {
       links: [
         {
           type: "Preview",
-          href: "https://brainstack.deveshrathod.me/",
+          href: "https://brainstack.devesh.cv/",
           icon: <Icons.globe className="size-3" />,
         },
         {
@@ -178,54 +235,25 @@ export const DATA = {
       image: "/projects/Aiformbuilder.png",
       video: "",
     },
-    {
-      title: "Code Bits",
-      href: "https://codebits.deveshrathod.me/",
-      dates: "2025",
-      active: true,
-      description:
-        "Code Bits – A collaborative code snippet sharing platform where developers can save, organize, and share useful code snippets with syntax highlighting and easy search functionality.",
-      technologies: ["Next.js", "TypeScript", "TailwindCSS", "MongoDB", "Node.js"],
-      links: [
-        {
-          type: "Preview",
-          href: "https://codebits.deveshrathod.me/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/Devesh36/CodeBits",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/CodeBits.png",
-      video: "",
-    },
-    {
-      title: "BeverageCompare",
-      href: "https://beverage-compare.vercel.app/",
-      dates: "2025",
-      active: true,
-      description:
-        "BeverageCompare – A beverage comparison and review platform that helps users discover, compare nutritional information, and share reviews about different beverages worldwide.",
-      technologies: ["Next.js", "TypeScript", "TailwindCSS",],
-      links: [
-        {
-          type: "Preview",
-          href: "https://beverage-compare.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/Devesh36/Beverage-compare",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/Beverage.png",
-      video: "",
-    },
+  ],
 
-    
+  openSource: [
+    {
+      title: "LiveKit Agents JS (Voice AI Framework)",
+      highlight: false,
+      description:
+        "Fixed an interruption-detection bug by refactoring word-count validation and adding 23+ unit tests. Resolved race-condition crashes in STT/TTS pipelines by implementing safe queue lifecycle guards. Improved stability across OpenAI, Deepgram, ElevenLabs, Cartesia, and Neuphonic plugins via merged PRs.",
+      tech: [""],
+      repos: [],
+    },
+    {
+      title: "Tscircuit (PCB Design-Electronics Tooling)",
+      highlight: false,
+      description:
+        "Contributed to multiple TypeScript-based repositories including jscad-electronics, footprinter, and easyeda-converter across the tscircuit ecosystem. Implemented features and bug fixes in PCB design tooling, improving developer experience and library functionality.",
+      tech: [""],
+      repos: ["jscad-electronics", "footprinter", "easyeda-converter"],
+    },
   ],
 
   hackathons: [
