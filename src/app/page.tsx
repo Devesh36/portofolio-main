@@ -72,12 +72,12 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
-                logoUrl={(work as any).logoUrl ?? ""}
+                logoUrl={work.logoUrl ?? ""}
+                logoIconName={work.logoIconName}
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
-                href={(work as any).href ?? ""}
-                badges={(work as any).badges ?? []}
+                badges={work.badges ?? []}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
@@ -96,7 +96,8 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 12 + id * 0.05}
             >
               <ResumeCard
-                logoUrl=""
+                logoUrl={"logoUrl" in item ? item.logoUrl ?? "" : ""}
+                logoIconName={item.logoIconName}
                 altText={item.title}
                 title={item.title}
                 subtitle="Open Source Contribution"

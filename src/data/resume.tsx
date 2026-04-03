@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, Globe, LeafyGreen } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 
 export const DATA = {
   name: "Devesh Rathod",
@@ -36,7 +36,6 @@ export const DATA = {
 
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    ,
   ],
   contact: {
     email: "deveshrathod047@gmail.com",
@@ -81,7 +80,8 @@ export const DATA = {
       badges: [],
       location: "On-Site",
       title: "Software Engineer Intern",
-      logoUrl: "/atomic.png",
+      logoUrl: "https://www.adani.com/-/media/project/adaniv1/logo/adani-logo.svg",
+      logoIconName: "factory",
       start: "Jul 2025",
       end: "Sep 2025",
       description: `Developed PlantOps Knowledge Engine—an on-premise LLM assistant enabling plant staff to securely query technical manuals and SOPs offline. Implemented model optimization for edge deployment, built secure UI with role-based access controls, and reduced query response time by 35%. Tech: Python, LLM Models, FastAPI, React, Docker.`,
@@ -91,7 +91,8 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Full Stack Intern",
-      logoUrl: "",
+      logoUrl: "https://content.jdmagicbox.com/v2/comp/palghar/p2/022pxx22.xx22.250430115834.s9p2/catalogue/devtonius-dahanu-road-palghar-internet-website-developers-75dc0lz81e-250.jpg",
+      logoIconName: "wrench",
       start: "June 2024",
       end: "May 2025",
       description: `Built multiple client-facing web applications using Next.js, React, and various CMS platforms. Developed lead generation platforms capturing 200+ leads/month, created portfolio and education consultancy sites with custom CMS integration, and optimized page performance by 40%. Tech: Next.js, React, TailwindCSS, Sanity CMS, HyGraph, Cal.com.`,
@@ -255,6 +256,8 @@ export const DATA = {
     {
       title: "LiveKit Agents JS (Voice AI Framework)",
       highlight: false,
+      logoUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-avatar/avatars/livekit.webp",
+      logoIconName: "mic",
       description:
         "Fixed an interruption-detection bug by refactoring word-count validation and adding 23+ unit tests. Resolved race-condition crashes in STT/TTS pipelines by implementing safe queue lifecycle guards. Improved stability across OpenAI, Deepgram, ElevenLabs, Cartesia, and Neuphonic plugins via merged PRs.",
       tech: [""],
@@ -263,6 +266,9 @@ export const DATA = {
     {
       title: "Tscircuit (PCB Design-Electronics Tooling)",
       highlight: false,
+       logoUrl: "https://avatars.githubusercontent.com/u/111661322?s=280&v=4",
+      
+      logoIconName: "circuit",
       description:
         "Contributed to multiple TypeScript-based repositories including jscad-electronics, footprinter, and easyeda-converter across the tscircuit ecosystem. Implemented features and bug fixes in PCB design tooling, improving developer experience and library functionality.",
       tech: [""],

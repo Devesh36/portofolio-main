@@ -5,12 +5,19 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
+import {
+  ChevronRightIcon,
+  CircuitBoardIcon,
+  FactoryIcon,
+  MicVocalIcon,
+  WrenchIcon,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 interface ResumeCardProps {
   logoUrl: string;
+  logoIconName?: "factory" | "wrench" | "mic" | "circuit";
   altText: string;
   title: string;
   subtitle?: string;
@@ -21,6 +28,7 @@ interface ResumeCardProps {
 }
 export const ResumeCard = ({
   logoUrl,
+  logoIconName,
   altText,
   title,
   subtitle,
@@ -30,6 +38,15 @@ export const ResumeCard = ({
   description,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const logoIconMap = {
+    factory: FactoryIcon,
+    wrench: WrenchIcon,
+    mic: MicVocalIcon,
+    circuit: CircuitBoardIcon,
+  } as const;
+
+  const LogoIcon = logoIconName ? logoIconMap[logoIconName] : null;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
@@ -47,11 +64,16 @@ export const ResumeCard = ({
       <Card className="flex">
         <div className="flex-none">
           <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
-            <AvatarImage
-              src={logoUrl}
-              alt={altText}
-              className="object-contain"
-            />
+            {logoUrl ? (
+              <AvatarImage
+                src={logoUrl}
+                alt={altText}
+                className="object-contain"
+              />
+            ) : null}
+            {!logoUrl && LogoIcon ? (
+              <LogoIcon className="size-5 text-muted-foreground" />
+            ) : null}
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
