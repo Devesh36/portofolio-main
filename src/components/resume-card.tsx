@@ -1,12 +1,9 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import {
-  ChevronRightIcon,
   CircuitBoardIcon,
   CloudIcon,
   FactoryIcon,
@@ -27,6 +24,7 @@ interface ResumeCardProps {
   period: string;
   description?: string;
 }
+
 export const ResumeCard = ({
   logoUrl,
   logoIconName,
@@ -49,6 +47,7 @@ export const ResumeCard = ({
   } as const;
 
   const LogoIcon = logoIconName ? logoIconMap[logoIconName] : null;
+  const meta = [subtitle, ...(badges ?? [])].filter(Boolean).join(" · ");
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
@@ -60,75 +59,53 @@ export const ResumeCard = ({
   return (
     <Link
       href={href || "#"}
-      className="block cursor-pointer"
+      className="block py-3.5"
       onClick={handleClick}
     >
-      <Card className="flex">
-        <div className="flex-none">
-          <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
-            {logoUrl ? (
-              <AvatarImage
-                src={logoUrl}
-                alt={altText}
-                className="object-contain"
-              />
-            ) : null}
-            {!logoUrl && LogoIcon ? (
-              <LogoIcon className="size-5 text-muted-foreground" />
-            ) : null}
-            <AvatarFallback>{altText[0]}</AvatarFallback>
-          </Avatar>
-        </div>
-        <div className="flex-grow ml-4 items-center flex-col group">
-          <CardHeader>
-            <div className="flex items-center justify-between gap-x-2 text-base">
-              <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
-                {title}
-                {badges && (
-                  <span className="inline-flex gap-x-1">
-                    {badges.map((badge, index) => (
-                      <Badge
-                        variant="secondary"
-                        className="align-middle text-xs"
-                        key={index}
-                      >
-                        {badge}
-                      </Badge>
-                    ))}
-                  </span>
-                )}
-                <ChevronRightIcon
-                  className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
-                  )}
-                />
-              </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
-                {period}
-              </div>
-            </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
-          </CardHeader>
-          {description && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
+      <div className="flex items-start gap-3">
+        <Avatar className="mt-0.5 size-8 rounded-md bg-muted">
+          {logoUrl ? (
+            <AvatarImage
+              src={logoUrl}
+              alt={altText}
+              className="object-contain"
+            />
+          ) : null}
+          {!logoUrl && LogoIcon ? (
+            <LogoIcon className="size-4 text-muted-foreground" />
+          ) : null}
+          <AvatarFallback className="rounded-md text-xs">
+            {altText[0]}
+          </AvatarFallback>
+        </Avatar>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-baseline justify-between gap-4">
+            <h3 className="truncate text-sm font-medium">{title}</h3>
+            <span className="shrink-0 font-mono text-[11px] tabular-nums text-muted-foreground">
+              {period}
+            </span>
+          </div>
+          {meta ? (
+            <p className="mt-0.5 text-xs text-muted-foreground">{meta}</p>
+          ) : null}
+          {description ? (
+            <motion.p
+              initial={false}
               animate={{
-                opacity: isExpanded ? 1 : 0,
-
                 height: isExpanded ? "auto" : 0,
+                opacity: isExpanded ? 1 : 0,
+                marginTop: isExpanded ? 8 : 0,
               }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="mt-2 text-xs sm:text-sm"
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className={cn(
+                "overflow-hidden text-sm leading-relaxed text-muted-foreground"
+              )}
             >
               {description}
-            </motion.div>
-          )}
+            </motion.p>
+          ) : null}
         </div>
-      </Card>
+      </div>
     </Link>
   );
 };
