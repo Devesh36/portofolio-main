@@ -76,42 +76,19 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
+                href={"href" in work ? work.href : undefined}
                 logoUrl={work.logoUrl ?? ""}
                 logoIconName={work.logoIconName}
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
                 badges={work.badges ?? []}
-                period={`${work.start} - ${work.end ?? "Present"}`}
+                period={
+                  work.start === work.end
+                    ? work.start
+                    : `${work.start} - ${work.end ?? "Present"}`
+                }
                 description={work.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-      <section id="open-source">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 12}>
-            <h2 className="text-xl font-bold">Open Source Contributions</h2>
-          </BlurFade>
-          {DATA.openSource.map((item, id) => (
-            <BlurFade
-              key={`${item.title}-${id}`}
-              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-            >
-              <ResumeCard
-                logoUrl={"logoUrl" in item ? item.logoUrl ?? "" : ""}
-                logoIconName={item.logoIconName}
-                altText={item.title}
-                title={item.title}
-                subtitle="Open Source Contribution"
-                badges={item.tech}
-                period=""
-                description={`${item.description}${
-                  item.repos.length > 0
-                    ? ` Repos: ${item.repos.join(", ")}.`
-                    : ""
-                }`}
               />
             </BlurFade>
           ))}

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import {
   ChevronRightIcon,
   CircuitBoardIcon,
+  CloudIcon,
   FactoryIcon,
   MicVocalIcon,
   WrenchIcon,
@@ -17,7 +18,7 @@ import React from "react";
 
 interface ResumeCardProps {
   logoUrl: string;
-  logoIconName?: "factory" | "wrench" | "mic" | "circuit";
+  logoIconName?: "factory" | "wrench" | "mic" | "circuit" | "cloud";
   altText: string;
   title: string;
   subtitle?: string;
@@ -44,6 +45,7 @@ export const ResumeCard = ({
     wrench: WrenchIcon,
     mic: MicVocalIcon,
     circuit: CircuitBoardIcon,
+    cloud: CloudIcon,
   } as const;
 
   const LogoIcon = logoIconName ? logoIconMap[logoIconName] : null;

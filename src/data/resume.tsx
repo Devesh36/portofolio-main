@@ -8,30 +8,28 @@ export const DATA = {
   location: "Mumbai, India",
   locationLink: "https://www.google.com/maps/place/Mumbai",
   description:
-    "Full‑stack engineer building user-focused web and mobile apps. I focus on shipping reliable, maintainable products that solve real problems and support developer communities.",
+    "Full-stack developer and open-source core maintainer specializing in AI-powered applications, LLM tooling, and hardware-design agents.",
   summary:
-    "Computer Engineering student passionate about building practical, user-centered software. I contribute to open source, build developer tools, and learn by shipping projects and participating in hackathons.",
+    "Full-stack developer and open-source core maintainer specializing in AI-powered applications, LLM tooling, and scalable backend systems. Core maintainer of OpenSRE and core member of CopperHead, with production experience across SaaS, voice AI, SRE, and PCB-design platforms.",
   avatarUrl: "/me2.jpeg",
   skills: [
+    "Java",
+    "C++",
+    "Python",
     "JavaScript",
     "TypeScript",
     "React",
     "Next.js",
     "Node.js",
     "Express.js",
-    "Python",
-    "Java",
-    "Electron.js",
-    "TailwindCSS",
     "MongoDB",
     "PostgreSQL",
     "Redis",
-    "Firebase",
-    "AWS",
     "Docker",
+    "AWS",
     "Git",
-    "GitHub",
-    "Linux",
+    "HTML/CSS",
+    "TailwindCSS",
   ],
 
   navbar: [
@@ -49,7 +47,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/devesh-rathod-3a680024a/",
+        url: "https://www.linkedin.com/in/deveshrathod",
         icon: Icons.linkedin,
         navbar: true,
       },
@@ -76,15 +74,64 @@ export const DATA = {
 
   work: [
     {
-      company: "Adani, Thermal Power Plant",
+      company: "Chouhan Industries",
+      href: "https://github.com/chouhanindustries/copperhead",
+      badges: ["Core Member"],
+      location: "Remote",
+      title: "CopperHead Core Member",
+      logoUrl: "https://github.com/chouhanindustries.png",
+      logoIconName: "circuit",
+      start: "July 2026",
+      end: "Present",
+      description: `Core member of CopperHead, an open-source AI agent for hardware design that generates, documents, and validates real PCBs from a prompt on existing KiCad repositories. Building the agent loop that edits .kicad_sch/.kicad_pcb files, keeps design docs in sync, and verifies changes with kicad-cli ERC/DRC until checks pass.`,
+    },
+    {
+      company: "Tracer Cloud",
+      href: "https://github.com/Tracer-Cloud/opensre",
+      badges: ["Core Maintainer"],
+      location: "Remote",
+      title: "OpenSRE Core Maintainer",
+      logoUrl: "https://github.com/Tracer-Cloud.png",
+      logoIconName: "cloud",
+      start: "Apr 2026",
+      end: "Present",
+      description: `Core maintainer of OpenSRE, an open-source AI SRE platform for incident investigation and operations automation, with 100+ merged pull requests. Shipped Discord gateway, Slack proactive delivery, docs/CI improvements, and contributor ecosystem tooling including a public leaderboard dashboard.`,
+    },
+   
+    {
+      company: "Tscircuit",
+      href: "https://github.com/tscircuit",
+      badges: ["Open Source"],
+      location: "Remote",
+      title: "Open Source Contributor",
+      logoUrl: "https://avatars.githubusercontent.com/u/111661322?s=280&v=4",
+      logoIconName: "circuit",
+      start: "Dec 2025",
+      end: "Feb 2026",
+      description: `Contributed to TypeScript PCB tooling across jscad-electronics, footprinter, and easyeda-converter in the tscircuit ecosystem. Implemented component libraries, footprint features, and bug fixes improving developer experience for React-based electronics design. Sponsored by tscircuit for open-source contributions to the PCB design tooling ecosystem.`,
+    },
+    {
+      company: "LiveKit",
+      href: "https://github.com/livekit/agents-js",
+      badges: ["Open Source"],
+      location: "Remote",
+      title: "Open Source Contributor",
+      logoUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-avatar/avatars/livekit.webp",
+      logoIconName: "mic",
+      start: "Nov 2025",
+      end: "Nov 2025",
+      description: `Fixed an interruption-detection bug by refactoring word-count validation and adding 23+ unit tests; merged PRs improving voice pipeline stability. Resolved race-condition crashes in STT/TTS pipelines across OpenAI, Deepgram, ElevenLabs, Cartesia, and Neuphonic plugins.`,
+    },
+    {
+      company: "Adani Thermal Power Plant",
       badges: [],
-      location: "On-Site",
+      location: "Mumbai, India",
       title: "Software Engineer Intern",
       logoUrl: "https://www.adani.com/-/media/project/adaniv1/logo/adani-logo.svg",
       logoIconName: "factory",
       start: "Jul 2025",
       end: "Sep 2025",
-      description: `Developed PlantOps Knowledge Engine—an on-premise LLM assistant enabling plant staff to securely query technical manuals and SOPs offline. Implemented model optimization for edge deployment, built secure UI with role-based access controls, and reduced query response time by 35%. Tech: Python, LLM Models, FastAPI, React, Docker.`,
+      description: `Built PlantOps Knowledge Engine, an on-premises LLM assistant deployed for 40+ staff, reducing manual information searches by 60%. Packaged and optimized models for edge deployment, decreasing average query response time by 45% with 99.9% uptime in a restricted network.`,
     },
     {
       company: "Devtonius",
@@ -93,26 +140,26 @@ export const DATA = {
       title: "Full Stack Intern",
       logoUrl: "https://content.jdmagicbox.com/v2/comp/palghar/p2/022pxx22.xx22.250430115834.s9p2/catalogue/devtonius-dahanu-road-palghar-internet-website-developers-75dc0lz81e-250.jpg",
       logoIconName: "wrench",
-      start: "June 2024",
+      start: "Jun 2024",
       end: "May 2025",
-      description: `Built multiple client-facing web applications using Next.js, React, and various CMS platforms. Developed lead generation platforms capturing 200+ leads/month, created portfolio and education consultancy sites with custom CMS integration, and optimized page performance by 40%. Tech: Next.js, React, TailwindCSS, Sanity CMS, HyGraph, Cal.com.`,
+      description: `Built client-facing web applications using Next.js, React, and headless CMS platforms (Sanity, HyGraph), including portfolio and education consultancy sites. Delivered lead-generation platforms capturing 200+ leads/month and improved page performance by 40% through optimization and modern frontend practices.`,
     },
   ],
 
   education: [
     {
-      school: "Terna Engineering College, Navimumbai",
+      school: "Terna Engineering College, Navi Mumbai",
       href: "https://www.terna.org/",
-      degree: "Computer Engineering ( B.E. )",
+      degree: "Bachelor of Engineering, Computer Engineering",
       logoUrl:
         "https://images.shiksha.com/mediadata/images/1663656852phpDeGhCE.jpeg",
       start: "2022",
       end: "2026",
     },
     {
-      school: "P. G. Jr. College, Bordi ( Gokhale Education Society )",
+      school: "P. G. Jr. College, Bordi, Maharashtra",
       href: "https://scontent.fbom50-1.fna.fbcdn.net/v/t39.30808-1/294073696_433246155482168_3299101997460754672_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=7o6gVg1bL-gQ7kNvwF-opYK&_nc_oc=AdmCKI3vfwriqc7Dp1Oap5WQl5arlCu8lviH9HeTR4kI9KH8YOui5S6C6neG7m0U3vU&_nc_zt=24&_nc_ht=scontent.fbom50-1.fna&_nc_gid=1tAJxtR1fRMf8rP3c9TaRw&oh=00_AfJQCJ0sRraAUl8cTi_ZO3bokLsvzezFIL-BoIwb8OoxMg&oe=683E685A",
-      degree: "XII th ( HSC )",
+      degree: "Higher Secondary Certificate (HSC)",
       logoUrl:
         "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJ1aWxkaW5nMi1pY29uIGx1Y2lkZS1idWlsZGluZy0yIj48cGF0aCBkPSJNNiAyMlY0YTIgMiAwIDAgMSAyLTJoOGEyIDIgMCAwIDEgMiAydjE4WiIvPjxwYXRoIGQ9Ik06IDEySDRhMiAyIDAgMCAwLTIgMnY2YTIgMiAwIDAgMCAyIDJoMiIvPjxwYXRoIGQ9Ik0xOCA5aDJhMiAyIDAgMCAxIDIgMnY5YTIgMiAwIDAgMS0yIDJoLTIiLz48cGF0aCBkPSJNMTAgNmg0Ii8+PHBhdGggZD0iTTEwIDEwaDQiLz48cGF0aCBkPSJNMTAgMTRoNCIvPjxwYXRoIGQ9Ik0xMCAxOGg0Ii8+PC9zdmc+",
       start: "2020",
@@ -136,13 +183,14 @@ export const DATA = {
       dates: "2026",
       active: true,
       description:
-        "CodeLens AI – AI-powered SaaS for code understanding with line-by-line explanations, summaries, and complexity analysis. Built with LLaMA 3.1 via Groq and a Monaco editor for real-time AI interaction.",
+        "AI-powered SaaS for code explanations, summaries, and complexity analysis using LLaMA 3.1 via Groq SDK with a Monaco-based editor. Built with Next.js, PostgreSQL, Prisma, and JWT authentication with shareable links and multi-language support.",
       technologies: [
         "Next.js",
         "TypeScript",
         "Prisma",
         "PostgreSQL",
         "Groq SDK",
+        "JWT",
         "TailwindCSS",
       ],
       links: [
@@ -166,7 +214,7 @@ export const DATA = {
       dates: "2026",
       active: true,
       description:
-        "InternTrack – Internship tracking and verification platform with role-based access for students, teachers, and HR. Includes token-based HR attendance verification, audit logs, dashboards, and automation via cron jobs.",
+        "Full-stack internship platform with RBAC (students, teachers, HR), deployed and actively used within the college. Implemented HR email-based attendance verification with JWT tokens, audit logs, analytics dashboards, and cron jobs.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -188,6 +236,35 @@ export const DATA = {
         },
       ],
       image: "/projects/Interntrack.png",
+      video: "",
+    },
+    {
+      title: "Baithak",
+      href: "https://baithak.devesh.cv/",
+      dates: "2026",
+      active: true,
+      description:
+        "A network of Indian nostalgia audio rooms — 15 themed nights like chai tapri rain, monsoon balcony, railway platform, and study desk. Pick a seat, play or skip any song, or build your own room with a YouTube catalog, backdrop, and shareable link.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "YouTube",
+        "Auth",
+      ],
+      links: [
+        {
+          type: "Preview",
+          href: "https://baithak.devesh.cv/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Devesh36/baithak-",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/Baithak.png",
       video: "",
     },
     {
@@ -242,37 +319,13 @@ export const DATA = {
     {
       title: "Infinity Castle",
       description:
-        "A cozy dark VS Code theme inspired by fantasy and castle aesthetics, crafted for an immersive and comfortable coding experience.",
+        "A cozy dark VS Code theme published on Open VSX with 500+ downloads, designed and maintained for an immersive, developer-friendly coding experience.",
       type: "Extension",
-      downloads: "400+ Downloads",
+      downloads: "500+ Downloads",
       highlight: "Real Product",
       platform: "Open VSX",
       href: "https://open-vsx.org/extension/Infinity/infinity-castle",
       image: "/extension/infinityimage.png",
-    },
-  ],
-
-  openSource: [
-    {
-      title: "LiveKit Agents JS (Voice AI Framework)",
-      highlight: false,
-      logoUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-avatar/avatars/livekit.webp",
-      logoIconName: "mic",
-      description:
-        "Fixed an interruption-detection bug by refactoring word-count validation and adding 23+ unit tests. Resolved race-condition crashes in STT/TTS pipelines by implementing safe queue lifecycle guards. Improved stability across OpenAI, Deepgram, ElevenLabs, Cartesia, and Neuphonic plugins via merged PRs.",
-      tech: [""],
-      repos: [],
-    },
-    {
-      title: "Tscircuit (PCB Design-Electronics Tooling)",
-      highlight: false,
-       logoUrl: "https://avatars.githubusercontent.com/u/111661322?s=280&v=4",
-      
-      logoIconName: "circuit",
-      description:
-        "Contributed to multiple TypeScript-based repositories including jscad-electronics, footprinter, and easyeda-converter across the tscircuit ecosystem. Implemented features and bug fixes in PCB design tooling, improving developer experience and library functionality.",
-      tech: [""],
-      repos: ["jscad-electronics", "footprinter", "easyeda-converter"],
     },
   ],
 
