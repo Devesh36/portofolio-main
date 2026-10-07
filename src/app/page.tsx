@@ -151,7 +151,7 @@ export default function Page() {
 
       <section id="skills">
         <BlurFade delay={BLUR_FADE_DELAY * 10}>
-          <SectionLabel>Stack</SectionLabel>
+          <SectionLabel>Skills</SectionLabel>
         </BlurFade>
         <div className="space-y-2">
           {DATA.skillGroups.map((group, id) => (
@@ -183,8 +183,8 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 15 + id * 0.04}
             >
               <ResumeCard
-                href={(education as any).href ?? ""}
-                logoUrl={(education as any).logoUrl ?? ""}
+                href={"href" in education ? education.href : undefined}
+                logoUrl={"logoUrl" in education ? education.logoUrl : ""}
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
@@ -223,7 +223,7 @@ export default function Page() {
         <BlurFade delay={BLUR_FADE_DELAY * 18}>
           <SectionLabel>Contact</SectionLabel>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Open to backend, AI systems, and infrastructure roles.{" "}
+            Open to full-stack, AI, and backend opportunities.{" "}
             <Link
               href={DATA.contact.social.email.url}
               className="text-foreground underline-offset-4 hover:underline"
@@ -232,17 +232,24 @@ export default function Page() {
             </Link>
             {" · "}
             <Link
-              href={DATA.contact.social.X.url}
-              className="text-foreground underline-offset-4 hover:underline"
-            >
-              X
-            </Link>
-            {" · "}
-            <Link
               href={DATA.contact.social.GitHub.url}
               className="text-foreground underline-offset-4 hover:underline"
             >
               GitHub
+            </Link>
+            {" · "}
+            <Link
+              href={DATA.contact.social.LinkedIn.url}
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              LinkedIn
+            </Link>
+            {" · "}
+            <Link
+              href={`tel:${DATA.contact.tel}`}
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              {DATA.contact.tel}
             </Link>
             .
           </p>

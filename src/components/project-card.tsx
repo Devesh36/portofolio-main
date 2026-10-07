@@ -32,31 +32,43 @@ export function ProjectCard({
 }: Props) {
   return (
     <article className={cn("group flex h-full flex-col", className)}>
-      <Link href={href || "#"} className="block overflow-hidden rounded-md">
-        {video ? (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none h-40 w-full object-cover object-top"
-          />
-        ) : null}
-        {image ? (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full object-cover object-top transition-opacity duration-300 group-hover:opacity-90"
-          />
-        ) : null}
-      </Link>
+      {video || image ? (
+        <Link href={href || "#"} className="block overflow-hidden rounded-md">
+          {video ? (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none h-40 w-full object-cover object-top"
+            />
+          ) : null}
+          {image ? (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full object-cover object-top transition-opacity duration-300 group-hover:opacity-90"
+            />
+          ) : null}
+        </Link>
+      ) : null}
       <div className="mt-3 flex flex-1 flex-col">
         <div className="flex items-baseline justify-between gap-3">
-          <h3 className="text-sm font-medium">{title}</h3>
-          <time className="font-mono text-[11px] text-muted-foreground">{dates}</time>
+          <h3 className="text-sm font-medium">
+            {href ? (
+              <Link href={href} target="_blank" className="underline-offset-4 hover:underline">
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
+          </h3>
+          {dates ? (
+            <time className="font-mono text-[11px] text-muted-foreground">{dates}</time>
+          ) : null}
         </div>
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
           {description}
