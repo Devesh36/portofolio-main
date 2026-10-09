@@ -212,6 +212,29 @@ export const DATA = {
       video: "",
     },
     {
+      title: "KeyTone",
+      href: "https://keytone.vercel.app/",
+      dates: "2026",
+      active: true,
+      description:
+        "Local-first mechanical keyboard audio engine for macOS, Windows, and Linux. A native Rust pipeline handles global key events, preloaded samples, a 64-voice mixer, and real-time DSP. A Tauri and React interface provides sound packs, presets, and spatial audio controls without recording or transmitting keystrokes.",
+      technologies: ["Rust", "Tauri", "React", "TypeScript", "CPAL", "DSP"],
+      links: [
+        {
+          type: "Preview",
+          href: "https://keytone.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Devesh36/KeyTone",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/Keytone.png",
+      video: "",
+    },
+    {
       title: "Baithak",
       href: "https://baithak.devesh.cv/",
       dates: "2026",
