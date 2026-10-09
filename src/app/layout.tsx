@@ -45,7 +45,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: `${DATA.name}`,
+    description: DATA.description,
     card: "summary_large_image",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name} — ${DATA.role}`,
+      },
+    ],
   },
   verification: {
     google: "",
